@@ -1,0 +1,17 @@
+# Dependencies (install with: composer install)
+/vendor/
+composer.lock
+
+# PHPUnit cache and results
+/.phpunit.cache/
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# WordPress debug log (if stored in plugin dir)
+/debug.log

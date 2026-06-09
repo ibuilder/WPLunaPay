@@ -1,0 +1,510 @@
+/* =============================================================================
+   MoonPay Crypto Payments â€” Admin CSS
+   Covers: Setup Wizard, Dashboard Widget, Admin Notices, Order Metabox,
+           Transactions page, Settings helpers.
+   ============================================================================= */
+
+/* ---- Shared variables ---- */
+:root {
+	--mp-purple:     #7b3fe4;
+	--mp-purple-dk:  #5e2db8;
+	--mp-green:      #1a7f37;
+	--mp-green-bg:   #d4edda;
+	--mp-red:        #cf222e;
+	--mp-red-bg:     #f8d7da;
+	--mp-blue-bg:    #cce5ff;
+	--mp-blue:       #004085;
+	--mp-amber-bg:   #fff3cd;
+	--mp-amber:      #856404;
+	--mp-border:     #ddd;
+	--mp-bg:         #f6f7f7;
+	--mp-radius:     8px;
+}
+
+/* =============================================================================
+   Setup Wizard
+   ============================================================================= */
+
+.moonpay-wizard-wrap {
+	max-width: 820px;
+}
+
+/* ---- Header ---- */
+.moonpay-wizard-header {
+	text-align: center;
+	padding: 24px 0 8px;
+}
+.moonpay-wizard-logo {
+	height: 36px;
+	margin-bottom: 8px;
+}
+.moonpay-wizard-header h1 {
+	font-size: 1.6em;
+	margin: 0 0 6px;
+}
+.moonpay-wizard-subtitle {
+	color: #666;
+	margin: 0;
+}
+
+/* ---- Progress bar ---- */
+.moonpay-wizard-progress {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 24px 0;
+	flex-wrap: wrap;
+	gap: 0;
+}
+.moonpay-wizard-step {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+	color: #666;
+	min-width: 80px;
+	gap: 4px;
+}
+.moonpay-wizard-step-num {
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: #e0e0e0;
+	color: #555;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 14px;
+	transition: background 0.2s;
+}
+.moonpay-wizard-step.active .moonpay-wizard-step-num {
+	background: var(--mp-purple);
+	color: #fff;
+}
+.moonpay-wizard-step.completed .moonpay-wizard-step-num {
+	background: var(--mp-green);
+	color: #fff;
+}
+.moonpay-wizard-step-label {
+	font-size: 11px;
+	text-align: center;
+	color: inherit;
+}
+.moonpay-wizard-step.active .moonpay-wizard-step-label { color: var(--mp-purple); font-weight: 600; }
+.moonpay-wizard-step.completed .moonpay-wizard-step-label { color: var(--mp-green); }
+.moonpay-wizard-connector {
+	flex: 1;
+	height: 2px;
+	background: #e0e0e0;
+	margin: 0 4px;
+	margin-bottom: 18px;
+	min-width: 20px;
+	max-width: 60px;
+}
+
+/* ---- Body ---- */
+.moonpay-wizard-body {
+	background: #fff;
+	border: 1px solid var(--mp-border);
+	border-radius: var(--mp-radius);
+	padding: 28px 32px;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+.moonpay-wizard-step-content h2 {
+	margin-top: 0;
+	font-size: 1.25em;
+	color: #1d2327;
+}
+
+/* ---- Footer nav ---- */
+.moonpay-wizard-footer {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 20px;
+	padding: 0 2px;
+}
+.moonpay-wizard-skip {
+	margin-left: auto !important;
+	color: #999 !important;
+	border-color: #ccc !important;
+}
+
+/* ---- Callouts ---- */
+.moonpay-wizard-callout {
+	border-left: 4px solid #aaa;
+	padding: 12px 16px;
+	border-radius: 0 4px 4px 0;
+	margin: 16px 0;
+	font-size: 0.93em;
+}
+.moonpay-wizard-callout--info    { border-color: #4a90d9; background: #eaf3fb; }
+.moonpay-wizard-callout--success { border-color: var(--mp-green); background: var(--mp-green-bg); }
+.moonpay-wizard-callout--warning { border-color: #d97706; background: var(--mp-amber-bg); }
+.moonpay-wizard-callout ul { margin: 8px 0 0 18px; padding: 0; }
+
+/* ---- Instructions ---- */
+.moonpay-wizard-instructions {
+	background: var(--mp-bg);
+	border: 1px solid var(--mp-border);
+	border-radius: 6px;
+	padding: 16px 20px;
+	margin: 16px 0;
+}
+.moonpay-wizard-instructions ol,
+.moonpay-wizard-instructions ul {
+	margin: 8px 0 0 20px;
+	padding: 0;
+}
+.moonpay-wizard-instructions li { margin-bottom: 6px; }
+
+/* ---- Form ---- */
+.moonpay-wizard-form.form-table th {
+	width: 180px;
+	padding: 10px 10px 10px 0;
+	font-weight: 600;
+}
+.moonpay-wizard-form.form-table td { padding: 10px 0; }
+.moonpay-wizard-form.form-table input.regular-text,
+.moonpay-wizard-form.form-table textarea.regular-text { width: 100%; max-width: 480px; }
+
+/* ---- Actions row ---- */
+.moonpay-wizard-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-top: 18px;
+}
+.moonpay-wizard-inline-result {
+	font-size: 13px;
+	font-weight: 600;
+}
+.moonpay-wizard-external-btn {
+	margin-top: 16px;
+}
+
+/* ---- Webhook URL copy row ---- */
+.moonpay-webhook-url-box {
+	background: var(--mp-bg);
+	border: 1px solid var(--mp-border);
+	border-radius: 6px;
+	padding: 14px 18px;
+	margin: 16px 0;
+}
+.moonpay-webhook-url-box label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+.moonpay-copy-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+.moonpay-webhook-url-text {
+	flex: 1;
+	min-width: 200px;
+	font-family: monospace;
+	font-size: 12px;
+	background: #fff;
+	border: 1px solid var(--mp-border);
+	padding: 5px 8px;
+	border-radius: 4px;
+}
+
+/* ---- Wizard status row ---- */
+.moonpay-wizard-status-row {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 16px 0;
+}
+.moonpay-wizard-status-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 13px;
+}
+.moonpay-wizard-status-icon {
+	width: 20px;
+	text-align: center;
+	font-weight: 700;
+}
+.moonpay-wizard-status-item.ok   .moonpay-wizard-status-icon { color: var(--mp-green); }
+.moonpay-wizard-status-item.pending .moonpay-wizard-status-icon { color: #aaa; }
+
+/* ---- Go Live checklist ---- */
+.moonpay-go-live-checklist {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 20px 0;
+}
+.moonpay-checklist-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 14px;
+	border-radius: 6px;
+	font-size: 14px;
+	border: 1px solid transparent;
+}
+.moonpay-checklist-item.done {
+	background: var(--mp-green-bg);
+	border-color: #b8ddc4;
+}
+.moonpay-checklist-item.not-done {
+	background: #fafafa;
+	border-color: var(--mp-border);
+	color: #888;
+}
+.moonpay-checklist-icon {
+	font-size: 16px;
+	font-weight: 700;
+	width: 22px;
+	text-align: center;
+}
+.moonpay-checklist-item.done .moonpay-checklist-icon     { color: var(--mp-green); }
+.moonpay-checklist-item.not-done .moonpay-checklist-icon { color: #ccc; }
+
+/* ---- Test order box ---- */
+.moonpay-wizard-test-order-box {
+	background: var(--mp-bg);
+	border: 1px solid var(--mp-border);
+	border-radius: 6px;
+	padding: 20px;
+	margin: 16px 0;
+}
+
+/* =============================================================================
+   Dashboard Widget
+   ============================================================================= */
+
+.moonpay-dash-widget { font-size: 13px; }
+
+.moonpay-dash-pill {
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 20px;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 12px;
+}
+.moonpay-dash-pill--live     { background: var(--mp-green-bg); color: var(--mp-green); }
+.moonpay-dash-pill--sandbox  { background: var(--mp-amber-bg); color: var(--mp-amber); }
+.moonpay-dash-pill--disabled { background: #f0f0f0; color: #888; }
+
+.moonpay-dash-section {
+	border-top: 1px solid #f0f0f0;
+	padding-top: 12px;
+	margin-top: 12px;
+}
+.moonpay-dash-section h4 {
+	margin: 0 0 10px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #888;
+}
+
+/* Progress bar */
+.moonpay-dash-progress-bar {
+	height: 6px;
+	background: #e8e8e8;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-bottom: 12px;
+}
+.moonpay-dash-progress-fill {
+	height: 100%;
+	background: var(--mp-purple);
+	border-radius: 3px;
+	transition: width 0.4s ease;
+}
+
+/* Checklist */
+.moonpay-dash-checklist { margin: 0; padding: 0; list-style: none; }
+.moonpay-dash-check {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 0;
+	font-size: 12px;
+}
+.moonpay-dash-check-icon {
+	font-weight: 700;
+	font-size: 13px;
+	width: 16px;
+	flex-shrink: 0;
+}
+.moonpay-dash-check.done .moonpay-dash-check-icon  { color: var(--mp-green); }
+.moonpay-dash-check.todo .moonpay-dash-check-icon  { color: #ccc; }
+.moonpay-dash-check.todo { color: #888; }
+.moonpay-dash-check-link { font-size: 11px; margin-left: 4px; }
+
+.moonpay-dash-wizard-btn {
+	margin-top: 12px !important;
+	width: 100%;
+	text-align: center;
+	background: var(--mp-purple) !important;
+	border-color: var(--mp-purple-dk) !important;
+	color: #fff !important;
+}
+.moonpay-dash-wizard-btn:hover {
+	background: var(--mp-purple-dk) !important;
+}
+
+/* Stats */
+.moonpay-dash-stats {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+.moonpay-dash-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	min-width: 60px;
+	background: var(--mp-bg);
+	border-radius: 6px;
+	padding: 8px 6px;
+	text-align: center;
+}
+.moonpay-dash-stat-num {
+	font-size: 1.3em;
+	font-weight: 700;
+	color: var(--mp-purple);
+	line-height: 1;
+	margin-bottom: 4px;
+}
+.moonpay-dash-stat-lbl { font-size: 10px; color: #888; }
+
+/* Quick links */
+.moonpay-dash-links {
+	border-top: 1px solid #f0f0f0;
+	padding-top: 10px;
+	margin-top: 12px;
+	font-size: 12px;
+	color: #888;
+}
+.moonpay-dash-links a { color: var(--mp-purple); text-decoration: none; }
+.moonpay-dash-links a:hover { text-decoration: underline; }
+
+/* =============================================================================
+   Order Metabox
+   ============================================================================= */
+
+.moonpay-metabox-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.moonpay-metabox-table th,
+.moonpay-metabox-table td {
+	padding: 5px 7px;
+	vertical-align: top;
+	border-bottom: 1px solid #f0f0f0;
+	font-size: 12px;
+}
+.moonpay-metabox-table th { font-weight: 600; width: 42%; color: #555; }
+.moonpay-metabox-table td code { font-size: 10px; word-break: break-all; }
+
+/* =============================================================================
+   Status badges (shared â€” used in metabox, transactions page, wizard)
+   ============================================================================= */
+
+.moonpay-badge {
+	display: inline-block;
+	padding: 2px 9px;
+	border-radius: 20px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+}
+.moonpay-badge--success  { background: var(--mp-green-bg);  color: var(--mp-green); }
+.moonpay-badge--warning  { background: var(--mp-amber-bg);  color: var(--mp-amber); }
+.moonpay-badge--danger   { background: var(--mp-red-bg);    color: var(--mp-red); }
+
+.moonpay-status-completed        { background: var(--mp-green-bg);  color: var(--mp-green); }
+.moonpay-status-pending,
+.moonpay-status-waitingPayment,
+.moonpay-status-waitingAuthorization { background: var(--mp-blue-bg); color: var(--mp-blue); }
+.moonpay-status-failed,
+.moonpay-status-cancelled        { background: var(--mp-red-bg);    color: var(--mp-red); }
+
+/* =============================================================================
+   Transactions admin page
+   ============================================================================= */
+
+.moonpay-admin-wrap .moonpay-stats-row {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin: 16px 0 20px;
+}
+.moonpay-admin-wrap .moonpay-stat-card {
+	background: #fff;
+	border: 1px solid var(--mp-border);
+	border-radius: var(--mp-radius);
+	padding: 16px 24px;
+	min-width: 140px;
+	text-align: center;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.moonpay-admin-wrap .moonpay-stat-card .moonpay-stat-number {
+	font-size: 2em;
+	font-weight: 700;
+	line-height: 1.1;
+	color: var(--mp-purple);
+}
+.moonpay-admin-wrap .moonpay-stat-card .moonpay-stat-label {
+	font-size: 12px;
+	color: #777;
+	margin-top: 4px;
+}
+
+/* =============================================================================
+   Settings page helper
+   ============================================================================= */
+
+.wp-lunapay-webhook-url {
+	background: var(--mp-bg);
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-family: monospace;
+	font-size: 12px;
+	border: 1px solid var(--mp-border);
+}
+
+/* =============================================================================
+   WPLunaPay Credit Footer
+   ============================================================================= */
+
+.moonpay-admin-credit {
+	margin-top: 32px;
+	padding-top: 14px;
+	border-top: 1px solid #f0f0f0;
+	font-size: 12px;
+	color: #aaa;
+	text-align: right;
+}
+.moonpay-admin-credit a {
+	color: var(--mp-purple);
+	text-decoration: none;
+	font-weight: 600;
+}
+.moonpay-admin-credit a:hover { text-decoration: underline; }
+
+/* Thank-you page success message */
+.wp-lunapay-success-msg {
+	padding: 14px 18px;
+	border-left: 4px solid var(--mp-green);
+	background: var(--mp-green-bg);
+	margin: 16px 0;
+}

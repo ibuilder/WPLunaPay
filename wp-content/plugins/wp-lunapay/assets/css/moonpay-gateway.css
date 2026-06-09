@@ -1,0 +1,125 @@
+/* MoonPay Crypto Payments — Checkout styles */
+
+.moonpay-payment-container {
+	max-width: 680px;
+	margin: 20px auto;
+	font-family: inherit;
+}
+
+.moonpay-payment-header {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.moonpay-payment-header h2 {
+	font-size: 1.5em;
+	margin-bottom: 8px;
+}
+
+.moonpay-payment-subheading {
+	color: #555;
+	font-size: 1em;
+}
+
+/* ---- iFrame ---- */
+.moonpay-iframe-container {
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.moonpay-iframe-container iframe,
+.moonpay-iframe {
+	display: block;
+	border: none;
+	width: 100%;
+}
+
+/* ---- Popup / modal ---- */
+.moonpay-popup-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0,0,0,0.65);
+	z-index: 99998;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.moonpay-popup-modal {
+	position: relative;
+	background: #fff;
+	border-radius: 16px;
+	width: 90%;
+	max-width: 480px;
+	height: 80vh;
+	overflow: hidden;
+	box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+}
+
+.moonpay-popup-modal iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.moonpay-popup-close {
+	position: absolute;
+	top: 10px;
+	right: 14px;
+	z-index: 10;
+	background: rgba(255,255,255,0.8);
+	border: none;
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* ---- Redirect ---- */
+.moonpay-redirect-container {
+	text-align: center;
+	padding: 30px;
+}
+
+/* ---- Footer ---- */
+.moonpay-payment-footer {
+	margin-top: 16px;
+	text-align: center;
+	font-size: 0.8em;
+	color: #888;
+}
+
+/* ---- Admin metabox ---- */
+.moonpay-metabox-table th {
+	font-weight: 600;
+	width: 40%;
+	vertical-align: top;
+	padding: 4px 6px;
+}
+.moonpay-metabox-table td {
+	padding: 4px 6px;
+	word-break: break-all;
+}
+
+.moonpay-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 20px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.moonpay-badge--success { background: #d4edda; color: #155724; }
+.moonpay-badge--warning { background: #fff3cd; color: #856404; }
+.moonpay-status-completed { background: #d4edda; color: #155724; }
+.moonpay-status-pending,
+.moonpay-status-waitingPayment { background: #cce5ff; color: #004085; }
+.moonpay-status-failed,
+.moonpay-status-cancelled { background: #f8d7da; color: #721c24; }

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" width="120" height="28" aria-label="MoonPay">
+  <!-- MoonPay wordmark approximation in brand purple -->
+  <rect width="120" height="28" rx="4" fill="#7B3FE4"/>
+  <text x="8" y="19" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" letter-spacing="0.5">MoonPay</text>
+  <!-- Crescent moon icon -->
+  <path d="M105 6 a8 8 0 1 0 0 16 6 6 0 1 1 0-16z" fill="#ffffff" opacity="0.9"/>
+</svg>

@@ -1,0 +1,1049 @@
+# Copyright (C) 2025 WPLunaPay (https://wprealwise.com)
+# This file is distributed under the same license as the MoonPay Crypto Payments plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: MoonPay Crypto Payments 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wprealwise.com\\n"
+"POT-Creation-Date: 2026-06-05 04:43-07\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"X-Generator: WPLunaPay\\n"
+"X-Domain: wp-lunapay\n"
+
+#: wp-lunapay.php:38
+msgid "MoonPay Crypto Payments requires WooCommerce to be active."
+msgstr ""
+
+#: wp-lunapay.php:117
+msgid "Settings"
+msgstr ""
+
+#: wp-lunapay.php:118
+msgid "Setup Wizard"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:18
+msgid "MoonPay Transactions"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:19
+msgid "MoonPay"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:40
+msgid "You do not have permission to view this page."
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:74
+msgid "Gateway Settings"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:87
+msgid "MoonPay API keys are not configured."
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:88
+msgid "Configure now â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:93
+msgid "MoonPay is in Sandbox (test) mode."
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:101
+msgid "Total Orders"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:105
+msgid "Completed"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:109
+msgid "Pending"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:113
+msgid "Failed / Cancelled"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:117
+msgid "Total Revenue"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:125
+msgid "Order"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:126
+msgid "Customer"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:127
+msgid "Date"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:128
+msgid "Total"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:129
+msgid "WC Status"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:130
+msgid "MoonPay Status"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:131
+msgid "Transaction ID"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:132
+msgid "Actions"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:139
+msgid "No MoonPay orders found."
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:181
+msgid "View"
+msgstr ""
+
+#: admin/class-wp-lunapay-admin-page.php:199
+msgid "%d order"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:20
+msgid "MoonPay Payments"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:47
+msgid "Sandbox"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:49
+msgid "Live"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:52
+msgid "Disabled"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:58
+msgid "Setup Progress"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:73
+msgid "Open Setup Wizard"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:81
+msgid "Last 30 Days"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:83
+msgid "Orders"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:84
+msgid "Revenue"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:92
+msgid "All Transactions"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:95
+msgid "MoonPay Dashboard â†—"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:112
+msgid "API keys configured"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:114
+msgid "Add keys â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:118
+msgid "Gateway enabled"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:120
+msgid "Enable â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:124
+msgid "Webhook URL registered & reachable"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:126
+msgid "Register â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:130
+msgid "Test order completed"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:132
+msgid "Run test â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:136
+msgid "Switched to live mode"
+msgstr ""
+
+#: admin/class-wp-lunapay-dashboard-widget.php:138
+msgid "Go live â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-notices.php:57
+msgid "<strong>MoonPay Gateway:</strong> API keys are not configured. <a href=\"%s\">Open Setup Wizard â†’</a>"
+msgstr ""
+
+#: admin/class-wp-lunapay-notices.php:71
+msgid "<strong>MoonPay Gateway:</strong> Webhook URL has not been tested. Orders won\'t update automatically until it\'s registered in your MoonPay dashboard. <a href=\"%s\">Register webhook â†’</a>"
+msgstr ""
+
+#: admin/class-wp-lunapay-notices.php:85
+msgid "<strong>MoonPay Gateway:</strong> No test order has been run. Verify the full payment flow before going live. <a href=\"%s\">Create test order â†’</a>"
+msgstr ""
+
+#: admin/class-wp-lunapay-notices.php:102
+msgid "<strong>MoonPay Gateway is in Sandbox mode.</strong> No real money is processed. <a href=\"%s\">Switch to Live â†’</a>"
+msgstr ""
+
+#: admin/class-wp-lunapay-notices.php:114
+msgid "<strong>MoonPay Gateway is Live!</strong> Your store is now accepting real cryptocurrency payments."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:37
+msgid "MoonPay Setup Wizard"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:38
+msgid "MoonPay Setup"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:63
+msgid "Testingâ€¦"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:64
+msgid "Savingâ€¦"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:65
+msgid "Connected!"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:66
+msgid "Failed"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:67
+msgid "Copied!"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:68
+msgid "Copy"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:69
+msgid "Creatingâ€¦"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:70
+msgid "Switching to live modeâ€¦"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:71
+msgid "You are about to switch to LIVE mode. Real money will be processed. Are you sure?"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:72
+msgid "Webhook URL is reachable!"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:73
+msgid "Could not reach webhook URL. Check your server and permalink settings."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:75
+msgid "Test Connection"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:76
+msgid "Save Keys"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:77
+msgid "Test Reachability"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:78
+msgid "Save Configuration"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:79
+msgid "Create Test Order"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:80
+msgid "Create Another Test Order"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:81
+msgid "Switch to Live Mode"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:83
+msgid "Test order #%id% created."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:84
+msgid "Open Checkout â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:85
+msgid "View in Admin"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:96
+msgid "Permission denied."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:110
+msgid "Follow these steps to start accepting cryptocurrency payments on your store."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:118
+msgid "Get Keys"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:119
+msgid "Enter Keys"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:120
+msgid "Webhook"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:121
+msgid "Configure"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:122
+msgid "Test"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:123
+msgid "Go Live"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:156
+msgid "Back"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:163
+msgid "Next Step"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:172
+msgid "Skip Wizard"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:186
+msgid "Step 1: Get Your MoonPay API Keys"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:187
+msgid "You need a MoonPay merchant account and API keys before proceeding."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:194
+msgid "Go to <a href=\"%s\" target=\"_blank\" rel=\"noopener\">dashboard.moonpay.com</a> and sign in or create a merchant account."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:198
+msgid "In the sidebar, click Developers â†’ API Keys."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:199
+msgid "You will see two keys: a Publishable Key (starts with pk_) and a Secret Key (starts with sk_)."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:200
+msgid "Keep both keys handy â€” you will enter them in the next step."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:205
+msgid "Sandbox vs Live"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:206
+msgid "MoonPay provides separate Sandbox keys (pk_test_ / sk_test_) for testing and Live keys (pk_live_ / sk_live_) for production. Start with Sandbox keys â€” you can switch to Live in the final step."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:210
+msgid "Open MoonPay Dashboard â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:222
+msgid "Step 2: Enter & Test Your API Keys"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:223
+msgid "Enter your MoonPay API keys and verify they connect successfully."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:227
+msgid "Mode"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:231
+msgid "Sandbox (test) mode â€” use pk_test_ / sk_test_ keys"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:236
+msgid "Publishable Key"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:241
+msgid "Starts with pk_test_ (sandbox) or pk_live_ (live)."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:245
+msgid "Secret Key"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:250
+msgid "Starts with sk_test_ (sandbox) or sk_live_ (live). Never share this."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:267
+msgid "API keys are saved. Click \"Test Connection\" to verify they are valid."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:279
+msgid "Step 3: Register Your Webhook URL"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:281
+msgid "MoonPay sends payment status updates to your site via webhooks. You must register this URL in the MoonPay dashboard so your orders update automatically."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:285
+msgid "Your Webhook URL"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:300
+msgid "How to register in MoonPay:"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:302
+msgid "Go to <a href=\"%s\" target=\"_blank\" rel=\"noopener\">MoonPay Dashboard â†’ Developers â†’ Webhooks</a>."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:303
+msgid "Click \"Add Endpoint\"."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:304
+msgid "Paste the URL above into the \"Endpoint URL\" field."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:305
+msgid "Select all event types (or at minimum: transaction_updated, transaction_created)."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:306
+msgid "Save. MoonPay will now send updates to your store."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:313
+msgid "Webhook URL reachable"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:320
+msgid "Last webhook received: %s ago"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:324
+msgid "No webhook received yet â€” register above and complete a test order"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:330
+msgid "Open MoonPay Webhooks â†’"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:341
+msgid "Pay with Cryptocurrency"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:345
+msgid "Step 4: Configure the Payment Widget"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:346
+msgid "Customise how MoonPay appears at checkout and which cryptocurrencies are offered."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:350
+msgid "Checkout Title"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:353
+msgid "Shown to customers at checkout."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:357
+msgid "Checkout Description"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:363
+msgid "Widget Display Mode"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:366
+msgid "Redirect to MoonPay (recommended)"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:367
+msgid "Embedded iFrame"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:368
+msgid "Modal Popup"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:371
+msgid "Redirect:"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:371
+msgid "Sends customer to MoonPay.com â€” simplest, no CSP issues."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:372
+msgid "iFrame:"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:372
+msgid "Widget appears on your page."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:373
+msgid "Popup:"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:373
+msgid "Opens in a modal overlay."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:378
+msgid "Default Cryptocurrency"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:381
+msgid "Pre-selected in the widget. E.g: eth, btc, usdc, usdc_polygon"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:385
+msgid "Allowed Cryptocurrencies"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:388
+msgid "Comma-separated. Leave empty to allow all 100+ currencies MoonPay supports."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:392
+msgid "Accent Color"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:395
+msgid "Brand color shown inside the MoonPay widget."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:416
+msgid "Step 5: Create & Complete a Test Order"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:420
+msgid "Warning:"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:421
+msgid "You are currently in LIVE mode. Switch to Sandbox mode in Step 2 before running a test order to avoid real charges."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:424
+msgid "This creates a real WooCommerce order in sandbox mode. Click \"Open Checkout\" to complete it with your sandbox MoonPay widget and verify the full payment flow."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:431
+msgid "Test order <a href=\"%1$s\" target=\"_blank\">#%2$d</a> created. Complete the payment in MoonPay sandbox to verify webhooks update the order status."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:455
+msgid "View Order in Admin"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:463
+msgid "What to verify:"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:465
+msgid "The MoonPay widget loads correctly at checkout."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:466
+msgid "After completing a sandbox payment, the order status in WooCommerce updates automatically (via webhook)."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:467
+msgid "The MoonPay Payment Details metabox on the order shows the transaction ID and status."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:468
+msgid "You receive an order confirmation email (if WooCommerce email is configured)."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:486
+msgid "At least one webhook received"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:487
+msgid "Test order created"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:493
+msgid "Step 6: Go Live"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:495
+msgid "Review the checklist below. When everything is green, replace your Sandbox keys with Live keys and switch to Live mode."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:509
+msgid "You are already in Live mode!"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:510
+msgid "Your store is accepting real cryptocurrency payments via MoonPay."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:514
+msgid "Before going live:"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:516
+msgid "Replace your Sandbox API keys (pk_test_ / sk_test_) with Live keys (pk_live_ / sk_live_) in Step 2."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:517
+msgid "Register the webhook URL in MoonPay Live mode (separate from Sandbox webhooks)."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:518
+msgid "Real money will be processed. Ensure your MoonPay account is fully verified."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:525
+msgid "Switch to Live Mode Now"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:529
+msgid "Complete all checklist items above before switching to live mode."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:533
+msgid "Open Full Settings Page"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:554
+msgid "Please enter both Publishable Key and Secret Key."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:563
+msgid "Connection failed: %s"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:571
+msgid "Connected! %d currencies available."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:591
+msgid "Keys saved."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:614
+msgid "Configuration saved."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:632
+msgid "URL not reachable: %s"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:640
+msgid "Server returned HTTP %d."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:649
+msgid "Reachable! (HTTP %d)"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:659
+msgid "Could not create a test product."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:670
+msgid "MoonPay (Test)"
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:682
+msgid "MoonPay test order created from Setup Wizard."
+msgstr ""
+
+#: admin/class-wp-lunapay-setup-wizard.php:785
+msgid "MoonPay Test Product"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:15
+msgid "Let customers pay with cryptocurrency via the MoonPay widget. Funds are converted and settled to your account."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:16
+msgid "Pay with Crypto (MoonPay)"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:44
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:46
+msgid "Enable MoonPay Gateway"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:50
+msgid "Title"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:52
+msgid "Payment method title shown at checkout."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:57
+msgid "Description"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:59
+msgid "Description shown below the payment method title at checkout."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:60
+msgid "Securely pay with Bitcoin, Ethereum, and 100+ cryptocurrencies via MoonPay."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:63
+msgid "Sandbox Mode"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:65
+msgid "Enable sandbox (test) mode"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:71
+msgid "Your MoonPay publishable API key."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:77
+msgid "Your MoonPay secret API key. Never share this."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:83
+msgid "Default crypto currency code pre-selected in the widget (e.g. eth, btc, usdc_polygon)."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:90
+msgid "Comma-separated list of allowed crypto currency codes. Leave empty to allow all."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:98
+msgid "Redirect to MoonPay"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:103
+msgid "How to display the MoonPay payment widget."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:107
+msgid "Widget Accent Color"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:109
+msgid "Hex color used as the MoonPay widget accent color."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:114
+msgid "Pending Payment Status"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:118
+msgid "Order status when payment is initiated."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:122
+msgid "Completed Payment Status"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:126
+msgid "Order status when payment is confirmed by MoonPay."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:130
+msgid "Failed Payment Status"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:134
+msgid "Order status when MoonPay reports a failure."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:138
+msgid "Debug Logging"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:140
+msgid "Enable debug log (WooCommerce â†’ Status â†’ Logs)"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:144
+msgid "Webhook URL"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:148
+msgid "Add this URL in your MoonPay dashboard as a webhook endpoint: <code>%s</code>"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:163
+msgid "MoonPay is not yet configured. Please contact the store owner."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:171
+msgid "Order not found."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:182
+msgid "Awaiting MoonPay payment."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:265
+msgid "MoonPay does not support programmatic refunds. Please process the refund manually via your MoonPay merchant dashboard."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:298
+msgid "Pay Now"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:299
+msgid "Processingâ€¦"
+msgstr ""
+
+#: includes/class-wp-lunapay.php:300
+msgid "Payment failed. Please try again."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:343
+msgid "MoonPay: Publishable Key and Secret Key are required."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:351
+msgid "MoonPay: Publishable Key should start with \"pk_\". Please check your key."
+msgstr ""
+
+#: includes/class-wp-lunapay.php:356
+msgid "MoonPay: Secret Key should start with \"sk_\". Please check your key."
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:33
+msgid "MoonPay Payment Details"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:47
+msgid "This order was not paid via MoonPay."
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:63
+msgid "Environment"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:80
+msgid "No webhook received yet"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:92
+msgid "Widget URL"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:95
+msgid "Open MoonPay Widget"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:109
+msgid "Refresh from MoonPay API"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:117
+msgid "Refreshingâ€¦"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:125
+msgid "Updated!"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:128
+msgid "Error"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:138
+msgid "Last Webhook Event"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:152
+msgid "MoonPay TX:"
+msgstr ""
+
+#: includes/class-wp-lunapay-order-metabox.php:171
+msgid "Gateway not available."
+msgstr ""
+
+#: includes/class-wp-lunapay-shortcodes.php:62
+msgid "MoonPay gateway is not configured."
+msgstr ""
+
+#: includes/class-wp-lunapay-shortcodes.php:92
+msgid "MoonPay Buy Widget"
+msgstr ""
+
+#: includes/class-wp-lunapay-shortcodes.php:104
+msgid "Buy Crypto with MoonPay"
+msgstr ""
+
+#: includes/class-wp-lunapay-shortcodes.php:175
+msgid "MoonPay Payment Status"
+msgstr ""
+
+#: includes/class-wp-lunapay-shortcodes.php:178
+msgid "Order Status"
+msgstr ""
+
+#: includes/class-wp-lunapay-shortcodes.php:226
+msgid "Loadingâ€¦"
+msgstr ""
+
+#: includes/class-wp-lunapay-shortcodes.php:242
+msgid "Buy Crypto"
+msgstr ""
+
+#: includes/class-wp-lunapay-webhook.php:96
+msgid "MoonPay payment completed. Transaction ID: %s"
+msgstr ""
+
+#: includes/class-wp-lunapay-webhook.php:110
+msgid "MoonPay payment %s."
+msgstr ""
+
+#: includes/class-wp-lunapay-webhook.php:120
+msgid "MoonPay payment status: %s"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:15
+msgid "MoonPay Crypto Widget"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:17
+msgid "Show a MoonPay buy button or crypto price ticker in your sidebar."
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:112
+msgid "Powered by MoonPay"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:141
+msgid "Widget Type"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:144
+msgid "Buy Button"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:145
+msgid "Price Ticker"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:146
+msgid "Embedded Widget (iFrame)"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:150
+msgid "Cryptocurrency"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:156
+msgid "Fiat Currency"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:162
+msgid "Default Amount (fiat)"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:168
+msgid "Button Label"
+msgstr ""
+
+#: includes/class-wp-lunapay-widget.php:174
+msgid "iFrame Height (px)"
+msgstr ""
+
+#: templates/payment-widget.php:16
+msgid "Complete Your Payment"
+msgstr ""
+
+#: templates/payment-widget.php:20
+msgid "Order total: %s â€” Pay securely with crypto via MoonPay."
+msgstr ""
+
+#: templates/payment-widget.php:36
+msgid "MoonPay Payment Widget"
+msgstr ""
+
+#: templates/payment-widget.php:43
+msgid "Click the button below to open the MoonPay payment window."
+msgstr ""
+
+#: templates/payment-widget.php:49
+msgid "Open MoonPay to Pay"
+msgstr ""
+
+#: templates/payment-widget.php:55
+msgid "Close"
+msgstr ""
+
+#: templates/payment-widget.php:69
+msgid "You will be redirected to MoonPay to complete your paymentâ€¦"
+msgstr ""
+
+#: templates/payment-widget.php:75
+msgid "Continue to MoonPay"
+msgstr ""
+
+#: templates/payment-widget.php:87
+msgid "Your payment is processed securely by MoonPay. Funds settle to the merchant after confirmation."
+msgstr ""
+

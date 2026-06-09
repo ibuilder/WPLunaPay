@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Server\\\\wplunapay\\\\wp-content\\\\plugins\\\\wc-moonpay-gateway\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Server\\\\wplunapay\\\\wp-content\\\\plugins\\\\wc-moonpay-gateway\\\\includes\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Server\\\\wplunapay\\\\wp-content\\\\plugins\\\\wc-moonpay-gateway\\\\admin\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Server\\\\wplunapay\\\\wp-content\\\\plugins\\\\wc-moonpay-gateway\\\\public\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Server\\\\wplunapay\\\\wp-content\\\\plugins\\\\wc-moonpay-gateway\\\\assets\\\\css\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Server\\\\wplunapay\\\\wp-content\\\\plugins\\\\wc-moonpay-gateway\\\\assets\\\\js\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Server\\\\wplunapay\\\\wp-content\\\\plugins\\\\wc-moonpay-gateway\\\\languages\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Server\\\\wplunapay\\\\wp-content\\\\plugins\\\\wc-moonpay-gateway\\\\templates\")",
+      "PowerShell(Get-ChildItem -Recurse C:\\\\Server\\\\wplunapay | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\('C:\\\\Server\\\\wplunapay\\\\',''\\) })"
+    ]
+  }
+}
