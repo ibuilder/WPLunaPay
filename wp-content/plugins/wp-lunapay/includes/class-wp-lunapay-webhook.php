@@ -17,7 +17,7 @@ class WP_LunaPay_Webhook {
 
 	public static function handle(): void {
 		$payload   = file_get_contents( 'php://input' );
-		$signature = sanitize_text_field( $_SERVER['HTTP_MOONPAY_SIGNATURE_V2'] ?? '' );
+		$signature = sanitize_text_field( wp_unslash( $_SERVER['HTTP_MOONPAY_SIGNATURE_V2'] ?? '' ) );
 
 		$gateway = self::get_gateway();
 		if ( ! $gateway ) {

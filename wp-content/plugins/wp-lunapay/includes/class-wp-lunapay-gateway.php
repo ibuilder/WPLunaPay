@@ -211,8 +211,8 @@ class WP_LunaPay_Gateway extends WC_Payment_Gateway {
 			'webhook_secret_note' => [
 				'title'       => __( 'Webhook URL', 'wp-lunapay' ),
 				'type'        => 'title',
-				/* translators: %s = Webhook URL */
 				'description' => sprintf(
+					/* translators: %s = Webhook URL */
 					__( 'Add this URL to your MoonPay dashboard: <code>%s</code>', 'wp-lunapay' ),
 					esc_url( $webhook_url )
 				),

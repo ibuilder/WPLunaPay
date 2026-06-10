@@ -151,19 +151,22 @@ class WP_LunaPay_Dashboard_Widget {
 
 		$since = gmdate( 'Y-m-d H:i:s', strtotime( '-30 days' ) );
 
+		$cache_key = 'wp_lunapay_quick_stats';
+		$cached    = wp_cache_get( $cache_key, 'wp_lunapay' );
+		if ( false !== $cached ) {
+			return $cached;
+		}
+
 		if ( class_exists( \Automattic\WooCommerce\Utilities\OrderUtil::class )
 			&& \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled() ) {
-
-			$table = $wpdb->prefix . 'wc_orders';
-			$row   = $wpdb->get_row( $wpdb->prepare(
-				"SELECT COUNT(*) AS orders, SUM(total_amount) AS revenue
-				   FROM {$table}
-				  WHERE payment_method = %s
-				    AND date_created_gmt >= %s",
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+			$row = $wpdb->get_row( $wpdb->prepare(
+				'SELECT COUNT(*) AS orders, SUM(total_amount) AS revenue FROM ' . $wpdb->prefix . 'wc_orders WHERE payment_method = %s AND date_created_gmt >= %s',
 				'moonpay',
 				$since
 			) );
 		} else {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$row = $wpdb->get_row( $wpdb->prepare(
 				"SELECT COUNT(*) AS orders, SUM( pm.meta_value + 0 ) AS revenue
 				   FROM {$wpdb->posts} p
@@ -176,9 +179,11 @@ class WP_LunaPay_Dashboard_Widget {
 			) );
 		}
 
-		return [
+		$result = [
 			'orders'  => (int) ( $row->orders ?? 0 ),
 			'revenue' => (float) ( $row->revenue ?? 0 ),
 		];
+		wp_cache_set( $cache_key, $result, 'wp_lunapay', 5 * MINUTE_IN_SECONDS );
+		return $result;
 	}
 }

@@ -120,18 +120,8 @@ add_action( 'plugins_loaded', 'wp_lunapay_init' );
 register_activation_hook( __FILE__, 'wp_lunapay_activate' );
 register_deactivation_hook( __FILE__, 'wp_lunapay_deactivate' );
 
-/**
- * Load translated strings from /languages/.
- * Must run on 'init', not 'plugins_loaded', so WP locale is fully set.
- */
-function wp_lunapay_load_textdomain(): void {
-	load_plugin_textdomain(
-		'wp-lunapay',
-		false,
-		dirname( plugin_basename( WP_LUNAPAY_PLUGIN_FILE ) ) . '/languages'
-	);
-}
-add_action( 'init', 'wp_lunapay_load_textdomain' );
+// Translations are loaded automatically by WordPress since version 4.6
+// when the plugin is hosted on WordPress.org — no manual load_plugin_textdomain() needed.
 
 function wp_lunapay_activate(): void {
 	if ( ! get_option( 'wp_lunapay_db_version' ) ) {

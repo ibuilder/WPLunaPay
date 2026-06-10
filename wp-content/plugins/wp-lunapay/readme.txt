@@ -1,8 +1,8 @@
 === MoonPay Crypto Payments ===
 Contributors: wplunapay
-Tags: woocommerce, moonpay, cryptocurrency, bitcoin, ethereum, payment gateway, crypto, web3
+Tags: woocommerce, moonpay, cryptocurrency, bitcoin, payments
 Requires at least: 6.4
-Tested up to: 6.8
+Tested up to: 7.0
 Requires PHP: 8.1
 Stable tag: 1.0.0
 License: GPLv2 or later

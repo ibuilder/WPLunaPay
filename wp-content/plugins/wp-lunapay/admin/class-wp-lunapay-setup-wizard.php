@@ -305,8 +305,8 @@ class WP_LunaPay_Setup_Wizard {
 			wp_send_json_error( [ 'message' => 'Forbidden' ], 403 );
 		}
 
-		$pub = sanitize_text_field( $_POST['publishable_key'] ?? '' );
-		$sec = sanitize_text_field( $_POST['secret_key'] ?? '' );
+		$pub = sanitize_text_field( wp_unslash( $_POST['publishable_key'] ?? '' ) );
+		$sec = sanitize_text_field( wp_unslash( $_POST['secret_key'] ?? '' ) );
 
 		if ( empty( $pub ) || empty( $sec ) ) {
 			wp_send_json_error( [ 'message' => __( 'Please enter both keys.', 'wp-lunapay' ) ] );
@@ -447,7 +447,7 @@ class WP_LunaPay_Setup_Wizard {
 		}
 
 		$step = absint( $_POST['step'] ?? 0 );
-		$data = $_POST['data'] ?? [];
+		$data = array_map( 'sanitize_text_field', wp_unslash( $_POST['data'] ?? [] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- sanitized via array_map.
 
 		$opts = get_option( 'woocommerce_moonpay_settings', [] );
 
@@ -534,12 +534,13 @@ class WP_LunaPay_Setup_Wizard {
 
 			if ( class_exists( \Automattic\WooCommerce\Utilities\OrderUtil::class )
 				&& \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled() ) {
-				$table = $wpdb->prefix . 'wc_orders';
-				$last  = $wpdb->get_var( $wpdb->prepare(
-					"SELECT date_updated_gmt FROM {$table} WHERE payment_method = %s ORDER BY date_updated_gmt DESC LIMIT 1",
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				$last = $wpdb->get_var( $wpdb->prepare(
+					'SELECT date_updated_gmt FROM ' . $wpdb->prefix . 'wc_orders WHERE payment_method = %s ORDER BY date_updated_gmt DESC LIMIT 1',
 					'moonpay'
 				) );
 			} else {
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 				$last = $wpdb->get_var( $wpdb->prepare(
 					"SELECT p.post_modified_gmt
 					   FROM {$wpdb->posts} p
@@ -570,8 +571,8 @@ class WP_LunaPay_Setup_Wizard {
 	public static function get_or_create_test_product() {
 		// Try to find an existing test product.
 		$product_ids = wc_get_products( [
-			'meta_key'   => '_moonpay_test_product',
-			'meta_value' => '1',
+			'meta_key'   => '_moonpay_test_product', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- bounded query on private product meta.
+			'meta_value' => '1', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 			'limit'      => 1,
 			'return'     => 'ids',
 		] );

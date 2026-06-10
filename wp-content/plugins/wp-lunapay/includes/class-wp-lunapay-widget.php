@@ -35,10 +35,10 @@ class WP_LunaPay_Widget extends WP_Widget {
 		$currency = sanitize_key( $instance['currency'] ?? 'eth' );
 		$height   = max( 300, absint( $instance['height'] ?? 400 ) );
 
-		echo $args['before_widget'];
+		echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- set by theme via register_sidebar().
 
 		if ( $title ) {
-			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- set by theme via register_sidebar().
 		}
 
 		wp_enqueue_style( 'wp-lunapay-shortcodes' );
@@ -59,7 +59,7 @@ class WP_LunaPay_Widget extends WP_Widget {
 				break;
 		}
 
-		echo $args['after_widget'];
+		echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- set by theme via register_sidebar().
 	}
 
 	/**

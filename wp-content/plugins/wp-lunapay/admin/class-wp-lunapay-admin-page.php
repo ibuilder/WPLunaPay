@@ -33,7 +33,7 @@ class WP_LunaPay_Admin_Page {
 	public static function render(): void {
 		$stats    = self::get_stats();
 		$per_page = 20;
-		$paged    = max( 1, absint( $_GET['paged'] ?? 1 ) );
+		$paged    = max( 1, absint( $_GET['paged'] ?? 1 ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- admin-only display, no state change.
 		$offset   = ( $paged - 1 ) * $per_page;
 		$orders   = self::get_orders( $per_page, $offset );
 		$total    = (int) ( $stats['total'] ?? 0 );
@@ -100,12 +100,12 @@ class WP_LunaPay_Admin_Page {
 				<div class="tablenav bottom">
 					<div class="tablenav-pages">
 						<?php
-						echo paginate_links( [
+						echo wp_kses_post( paginate_links( [
 							'base'    => add_query_arg( 'paged', '%#%' ),
 							'format'  => '',
 							'total'   => $pages,
 							'current' => $paged,
-						] );
+						] ) );
 						?>
 					</div>
 				</div>
@@ -142,17 +142,21 @@ class WP_LunaPay_Admin_Page {
 		// HPOS detection.
 		$hpos = self::is_hpos_enabled();
 
-		if ( $hpos ) {
-			$table = $wpdb->prefix . 'wc_orders';
+		$cache_key = 'wp_lunapay_stats';
+		$cached    = wp_cache_get( $cache_key, 'wp_lunapay' );
+		if ( false !== $cached ) {
+			return $cached;
+		}
 
+		if ( $hpos ) {
+			$table = $wpdb->prefix . 'wc_orders'; // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table is always a WP core table name, never user input.
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 			$rows = $wpdb->get_results( $wpdb->prepare(
-				"SELECT status, COUNT(*) as cnt, SUM(total_amount) as rev
-				   FROM {$table}
-				  WHERE payment_method = %s
-				  GROUP BY status",
+				"SELECT status, COUNT(*) as cnt, SUM(total_amount) as rev FROM {$table} WHERE payment_method = %s GROUP BY status", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 				'moonpay'
 			) );
 		} else {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$rows = $wpdb->get_results( $wpdb->prepare(
 				"SELECT p.post_status AS status, COUNT(*) AS cnt, SUM( pm.meta_value + 0 ) AS rev
 				   FROM {$wpdb->posts} p
@@ -182,6 +186,7 @@ class WP_LunaPay_Admin_Page {
 			}
 		}
 
+		wp_cache_set( $cache_key, $stats, 'wp_lunapay', 5 * MINUTE_IN_SECONDS );
 		return $stats;
 	}
 
@@ -239,7 +244,7 @@ class WP_LunaPay_Admin_Page {
 			] );
 		}
 
-		fclose( $out );
+		fclose( $out ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- streaming to php://output for CSV; WP_Filesystem not applicable here.
 		exit;
 	}
 
