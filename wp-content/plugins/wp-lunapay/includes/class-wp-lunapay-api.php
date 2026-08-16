@@ -36,14 +36,16 @@ class WP_LunaPay_API {
 	}
 
 	public function sign( string $query_string ): string {
-		return base64_encode( hash_hmac( 'sha256', $query_string, $this->secret_key, true ) );
+		// MoonPay requires HMAC-SHA256 raw output encoded as base64 — this is their documented signature format.
+		return base64_encode( hash_hmac( 'sha256', $query_string, $this->secret_key, true ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 	}
 
 	public function verify_webhook_signature( string $payload, string $received_signature ): bool {
 		if ( empty( $received_signature ) ) {
 			return false;
 		}
-		$expected = base64_encode( hash_hmac( 'sha256', $payload, $this->secret_key, true ) );
+		// MoonPay webhook signatures are HMAC-SHA256 raw bytes encoded as base64.
+		$expected = base64_encode( hash_hmac( 'sha256', $payload, $this->secret_key, true ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 		return hash_equals( $expected, $received_signature );
 	}
 

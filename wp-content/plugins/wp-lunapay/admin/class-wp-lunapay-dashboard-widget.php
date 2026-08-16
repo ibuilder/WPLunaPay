@@ -60,7 +60,7 @@ class WP_LunaPay_Dashboard_Widget {
 			<ul class="wp-lunapay-checklist" style="margin:0 0 12px 0;padding:0;list-style:none;">
 				<?php foreach ( $checklist as $item ) : ?>
 					<li style="padding:2px 0;">
-						<?php echo $item['done'] ? '&#10003;' : '&#9675;'; ?>
+						<?php echo $item['done'] ? esc_html( '✓' ) : esc_html( '○' ); ?>
 						<?php echo esc_html( $item['label'] ); ?>
 					</li>
 				<?php endforeach; ?>

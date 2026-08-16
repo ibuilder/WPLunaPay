@@ -99,6 +99,25 @@ Yes. Enable Sandbox mode and use MoonPay test keys (pk_test_ / sk_test_). The Se
 Yes. Set "Minimum Order Amount" in WooCommerce → Settings → Payments → MoonPay. Orders below this value will not show the crypto payment option.
 
 
+== Third Party Services ==
+
+This plugin connects to **MoonPay** (https://www.moonpay.com) to process cryptocurrency payments on behalf of your customers. By activating and using this plugin, your site will send data to MoonPay's servers.
+
+**What data is sent:**
+* Order amount, currency, and the customer's wallet address (if pre-filled) to construct a signed widget URL.
+* Webhook payloads are received *from* MoonPay to update order statuses.
+* API keys are sent to MoonPay's REST API (`https://api.moonpay.com`) to verify credentials.
+
+**When it is sent:**
+* At checkout when the customer selects the MoonPay payment option.
+* When the Setup Wizard tests your API connection.
+* When MoonPay sends a webhook notification after a transaction.
+
+**MoonPay Terms of Service:** https://www.moonpay.com/legal/terms_of_use
+**MoonPay Privacy Policy:** https://www.moonpay.com/legal/privacy_policy
+
+No payment card data or personal customer data is processed by this plugin directly. All payment processing occurs within MoonPay's PCI-compliant environment.
+
 == Screenshots ==
 
 1. Checkout — MoonPay Crypto Payments option alongside other gateways.
@@ -125,7 +144,7 @@ Yes. Set "Minimum Order Amount" in WooCommerce → Settings → Payments → Moo
 * Min/max order amount, custom button text, iFrame height, icon toggle, success message
 * HPOS (High-Performance Order Storage) compatible
 * Translation-ready with full .pot template (258 strings)
-* 131-test PHPUnit suite
+* 150-test PHPUnit suite (166 assertions)
 
 == Upgrade Notice ==
 

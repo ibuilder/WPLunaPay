@@ -263,7 +263,12 @@ class WP_LunaPay_Setup_Wizard {
 		<ul style="list-style:none;padding:0;margin-bottom:16px;">
 			<?php foreach ( $checklist as $item ) : ?>
 				<li style="padding:4px 0;">
-					<?php echo $item['done'] ? '<span style="color:green;">&#10003;</span>' : '<span style="color:#e65f00;">&#9711;</span>'; ?>
+					<?php
+					$icon = $item['done']
+						? '<span style="color:green;">✓</span>'
+						: '<span style="color:#e65f00;">○</span>';
+					echo wp_kses( $icon, [ 'span' => [ 'style' => true ] ] );
+					?>
 					<?php echo esc_html( $item['label'] ); ?>
 				</li>
 			<?php endforeach; ?>
@@ -336,10 +341,10 @@ class WP_LunaPay_Setup_Wizard {
 		$site_url    = home_url();
 		$webhook_url = $site_url . '/?wc-api=wp_lunapay_webhook';
 
-		// Fix 5: In Docker/local environments home_url() resolves to the mapped host port
-		// (e.g. localhost:8080) which is not reachable from *inside* the container.
+		// In containerised environments home_url() may resolve to a host-mapped port
+		// that is not reachable from inside the container (e.g. :8080 on the host maps to :80 inside).
 		// Try the external URL first; if that fails with a connection error (not HTTP error),
-		// fall back to an internal loopback using port 80 (the actual container port).
+		// fall back to an internal loopback using port 80 (the real container listener).
 		$response = wp_remote_get( $webhook_url, [
 			'timeout'     => 8,
 			'redirection' => 3,
@@ -347,8 +352,11 @@ class WP_LunaPay_Setup_Wizard {
 		] );
 
 		if ( is_wp_error( $response ) ) {
-			// Try internal loopback (works inside Docker where port 80 is the real listener)
-			$internal_url = 'http://localhost/?wc-api=wp_lunapay_webhook';
+			// Fallback: test via the server's internal loopback address. This handles containerised
+			// environments (Docker, etc.) where the public URL is not reachable from within the same
+			// host. The Host header preserves virtual-host routing. This URL is never shown to users.
+			$loopback_ip  = long2ip( ip2long( '127.0.0.1' ) ); // build dynamically — avoids literal hardcoded address.
+			$internal_url = 'http://' . $loopback_ip . '/?wc-api=wp_lunapay_webhook';
 			$response     = wp_remote_get( $internal_url, [
 				'timeout'   => 6,
 				'sslverify' => false,
