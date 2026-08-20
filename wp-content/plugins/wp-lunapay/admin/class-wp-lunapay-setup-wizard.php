@@ -137,7 +137,7 @@ class WP_LunaPay_Setup_Wizard {
 		</p>
 		<div id="wlp-connection-result" style="margin-top:8px;"></div>
 		<p>
-			<a href="<?php echo esc_url( add_query_arg( 'step', 2 ) ); ?>" class="button button-secondary">
+			<a href="<?php echo esc_url( add_query_arg( 'step', 3 ) ); ?>" class="button button-secondary">
 				<?php esc_html_e( 'Next', 'wp-lunapay' ); ?>
 			</a>
 		</p>
@@ -537,6 +537,9 @@ class WP_LunaPay_Setup_Wizard {
 		$product->set_name( __( 'MoonPay Test Product', 'wp-lunapay' ) );
 		$product->set_regular_price( '9.99' );
 		$product->set_sku( 'wp-lunapay-test' );
+		$product->set_virtual( true );
+		$product->set_catalog_visibility( 'hidden' );
+		$product->set_status( 'private' );
 		$product->save();
 		return $product;
 	}
