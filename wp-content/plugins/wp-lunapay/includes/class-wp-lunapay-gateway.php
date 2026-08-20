@@ -128,7 +128,7 @@ class WP_LunaPay_Gateway extends WC_Payment_Gateway {
 			'iframe_height' => [
 				'title'             => __( 'iFrame Height (px)', 'wp-lunapay' ),
 				'type'              => 'number',
-				'description'       => __( 'Height of the embedded MoonPay iFrame in pixels (300–1200).', 'wp-lunapay' ),
+				'description'       => __( 'Height of the embedded MoonPay iFrame in pixels (300-1200).', 'wp-lunapay' ),
 				'default'           => '620',
 				'desc_tip'          => true,
 				'custom_attributes' => [ 'min' => 300, 'max' => 1200 ],
@@ -220,11 +220,11 @@ class WP_LunaPay_Gateway extends WC_Payment_Gateway {
 			'wprealwise_credit' => [
 				'title'       => '',
 				'type'        => 'title',
-				'description' => '<p style="text-align:center;">' . sprintf(
+				'description' => apply_filters( 'wplunapay_show_credit', true ) ? '<p style="text-align:center;">' . sprintf(
 					/* translators: %s = URL */
 					__( 'Powered by <a href="%s" target="_blank" rel="noopener">WPLunaPay</a>', 'wp-lunapay' ),
 					'https://wprealwise.com'
-				) . '</p>',
+				) . '</p>' : '',
 			],
 		];
 	}
