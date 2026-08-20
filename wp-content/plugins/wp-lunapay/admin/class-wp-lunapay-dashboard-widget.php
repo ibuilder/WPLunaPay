@@ -88,6 +88,7 @@ class WP_LunaPay_Dashboard_Widget {
 				<a href="<?php echo esc_url( admin_url( 'admin.php?page=wp-lunapay-transactions' ) ); ?>"><?php esc_html_e( 'Transactions', 'wp-lunapay' ); ?></a>
 			</p>
 
+			<?php if ( apply_filters( 'wplunapay_show_credit', true ) ) : ?>
 			<!-- Credit -->
 			<p style="text-align:center;color:#999;font-size:11px;margin-top:8px;">
 				<?php
@@ -98,6 +99,7 @@ class WP_LunaPay_Dashboard_Widget {
 				);
 				?>
 			</p>
+			<?php endif; ?>
 		</div>
 		<?php
 	}

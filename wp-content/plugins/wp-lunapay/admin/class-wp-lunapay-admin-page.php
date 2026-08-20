@@ -111,6 +111,7 @@ class WP_LunaPay_Admin_Page {
 				</div>
 			<?php endif; ?>
 
+			<?php if ( apply_filters( 'wplunapay_show_credit', true ) ) : ?>
 			<!-- Credit -->
 			<p class="wp-lunapay-credit" style="text-align:center;margin-top:30px;color:#999;">
 				<?php
@@ -121,6 +122,7 @@ class WP_LunaPay_Admin_Page {
 				);
 				?>
 			</p>
+			<?php endif; ?>
 		</div>
 		<?php
 	}
