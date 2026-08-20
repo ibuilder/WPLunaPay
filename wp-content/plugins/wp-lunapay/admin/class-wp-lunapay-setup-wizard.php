@@ -78,6 +78,7 @@ class WP_LunaPay_Setup_Wizard {
 				?>
 			</div>
 
+			<?php if ( apply_filters( 'wplunapay_show_credit', true ) ) : ?>
 			<!-- Credit -->
 			<p class="wp-lunapay-credit" style="text-align:center;margin-top:30px;color:#999;">
 				<?php
@@ -88,6 +89,7 @@ class WP_LunaPay_Setup_Wizard {
 				);
 				?>
 			</p>
+			<?php endif; ?>
 		</div>
 		<?php
 	}
@@ -135,7 +137,7 @@ class WP_LunaPay_Setup_Wizard {
 		</p>
 		<div id="wlp-connection-result" style="margin-top:8px;"></div>
 		<p>
-			<a href="<?php echo esc_url( add_query_arg( 'step', 3 ) ); ?>" class="button button-secondary">
+			<a href="<?php echo esc_url( add_query_arg( 'step', 2 ) ); ?>" class="button button-secondary">
 				<?php esc_html_e( 'Next', 'wp-lunapay' ); ?>
 			</a>
 		</p>
@@ -490,110 +492,44 @@ class WP_LunaPay_Setup_Wizard {
 			'wizardUrl'   => admin_url( 'admin.php?page=wp-lunapay-setup' ),
 			'setupData'   => $setup_data,
 			'i18n'        => [
-				'btnTestConnection'  => __( 'Test Connection',         'wp-lunapay' ),
-				'btnSaveKeys'        => __( 'Save Keys',               'wp-lunapay' ),
-				'btnTestReachability'=> __( 'Test Reachability',       'wp-lunapay' ),
-				'btnSaveConfig'      => __( 'Save Configuration',      'wp-lunapay' ),
-				'btnCreateTestOrder' => __( 'Create Test Order',       'wp-lunapay' ),
-				'btnAnotherTestOrder'=> __( 'Create Another Test Order','wp-lunapay' ),
-				'btnGoLive'          => __( 'Go Live',                 'wp-lunapay' ),
-				'enterBothKeys'      => __( 'Please enter both API keys.', 'wp-lunapay' ),
-				'testing'            => __( 'Testing…',                'wp-lunapay' ),
-				'saving'             => __( 'Saving…',                 'wp-lunapay' ),
-				'connected'          => __( 'Connected!',              'wp-lunapay' ),
-				'failed'             => __( 'Failed.',                 'wp-lunapay' ),
-				'copied'             => __( 'Copied!',                 'wp-lunapay' ),
-				'copy'               => __( 'Copy',                    'wp-lunapay' ),
-				'creating'           => __( 'Creating…',               'wp-lunapay' ),
-				'goingLive'          => __( 'Going live…',             'wp-lunapay' ),
-				'confirmGoLive'      => __( 'Switch to live mode?',    'wp-lunapay' ),
-				'reachable'          => __( 'Reachable!',              'wp-lunapay' ),
-				'notReachable'       => __( 'Not reachable.',          'wp-lunapay' ),
-				'testOrderCreated'   => __( 'Test order created.',     'wp-lunapay' ),
-				'openCheckout'       => __( 'Open Checkout',           'wp-lunapay' ),
-				'viewInAdmin'        => __( 'View in Admin',           'wp-lunapay' ),
+				'btnTestConnection'  => __( 'Test Connection',      'wp-lunapay' ),
+				'btnTestWebhook'     => __( 'Test Reachability',     'wp-lunapay' ),
+				'btnCreateTestOrder' => __( 'Create Test Order',     'wp-lunapay' ),
+				'btnGoLive'          => __( 'Switch to Live Mode',   'wp-lunapay' ),
+				'btnConfirmGoLive'   => __( 'Yes, Go Live',          'wp-lunapay' ),
+				'btnCancel'          => __( 'Cancel',                'wp-lunapay' ),
+				'msgConnected'       => __( 'Connected successfully!', 'wp-lunapay' ),
+				'msgWebhookOk'       => __( 'Webhook endpoint is reachable.', 'wp-lunapay' ),
+				'msgTestOrderCreated'=> __( 'Test order created.',   'wp-lunapay' ),
+				'msgLive'            => __( 'Gateway is now live!',  'wp-lunapay' ),
 			],
 		];
 	}
 
 	// ------------------------------------------------------------------
-	// get_setup_data
+	// Helpers
 	// ------------------------------------------------------------------
 
-	/**
-	 * Reads wp_lunapay_setup option and does HPOS-aware DB query for last webhook.
-	 *
-	 * @return array
-	 */
-	public static function get_setup_data(): array {
+	private static function get_setup_data(): array {
 		$setup = get_option( 'wp_lunapay_setup', [] );
-
-		// Enrich with last webhook from DB if not already set.
-		if ( empty( $setup['last_webhook_received'] ) ) {
-			global $wpdb;
-
-			if ( class_exists( \Automattic\WooCommerce\Utilities\OrderUtil::class )
-				&& \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled() ) {
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-				$last = $wpdb->get_var( $wpdb->prepare(
-					'SELECT date_updated_gmt FROM ' . $wpdb->prefix . 'wc_orders WHERE payment_method = %s ORDER BY date_updated_gmt DESC LIMIT 1',
-					'moonpay'
-				) );
-			} else {
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
-				$last = $wpdb->get_var( $wpdb->prepare(
-					"SELECT p.post_modified_gmt
-					   FROM {$wpdb->posts} p
-					   JOIN {$wpdb->postmeta} pm ON pm.post_id = p.ID AND pm.meta_key = '_payment_method' AND pm.meta_value = %s
-					  WHERE p.post_type = 'shop_order'
-					  ORDER BY p.post_modified_gmt DESC LIMIT 1",
-					'moonpay'
-				) );
-			}
-
-			if ( $last ) {
-				$setup['last_webhook_received'] = $last;
-			}
-		}
-
-		return $setup;
+		return [
+			'test_order_id'     => $setup['test_order_id'] ?? 0,
+			'went_live_at'      => $setup['went_live_at'] ?? '',
+			'webhook_reachable' => $setup['webhook_reachable'] ?? false,
+		];
 	}
 
-	// ------------------------------------------------------------------
-	// get_or_create_test_product
-	// ------------------------------------------------------------------
-
-	/**
-	 * Returns (or creates) a hidden virtual test product for sandbox orders.
-	 *
-	 * @return WC_Product|false
-	 */
-	public static function get_or_create_test_product() {
-		// Try to find an existing test product.
-		$product_ids = wc_get_products( [
-			'meta_key'   => '_moonpay_test_product', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- bounded query on private product meta.
-			'meta_value' => '1', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
-			'limit'      => 1,
-			'return'     => 'ids',
-		] );
-
-		if ( ! empty( $product_ids ) ) {
-			$product = wc_get_product( $product_ids[0] );
-			if ( $product ) {
-				return $product;
-			}
+	private static function get_or_create_test_product(): ?\WC_Product {
+		$existing = wc_get_products( [ 'sku' => 'wp-lunapay-test', 'limit' => 1 ] );
+		if ( ! empty( $existing ) ) {
+			return $existing[0];
 		}
 
-		// Create a new test product.
-		$product = new WC_Product_Simple();
+		$product = new \WC_Product_Simple();
 		$product->set_name( __( 'MoonPay Test Product', 'wp-lunapay' ) );
-		$product->set_regular_price( '10.00' );
-		$product->set_virtual( true );
-		$product->set_catalog_visibility( 'hidden' );
-		$product->set_status( 'private' );
-		$product->update_meta_data( '_moonpay_test_product', '1' );
+		$product->set_regular_price( '9.99' );
+		$product->set_sku( 'wp-lunapay-test' );
 		$product->save();
-
 		return $product;
 	}
 }
